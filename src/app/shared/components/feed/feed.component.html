@@ -24,6 +24,7 @@
         <h1>{{ article.title }}</h1>
         <p>{{ article.description }}</p>
         <span>Read more...</span>
+        <mc-tag-list [tags]="article.tagList"></mc-tag-list>
         TAG LIST
         <!-- <ul class="tag-list">
             <li

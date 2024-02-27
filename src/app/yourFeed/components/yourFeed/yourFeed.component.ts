@@ -1,13 +1,12 @@
 import {Component} from '@angular/core'
 import {FeedComponent} from '../../../shared/components/feed/feed.component'
 import {BannerComponent} from '../../../shared/components/banner/banner.component'
-import {ErrorMessageComponent} from '../../../shared/components/errorMessage/errorMessage.component'
 import {PopularTagsComponent} from '../../../shared/components/popularTags/popularTags.component'
 import {FeedTogglerComponent} from '../../../shared/components/feedToggler/feedToggler.component'
 
 @Component({
-  selector: 'mc-global-feed',
-  templateUrl: './globalFeed.component.html',
+  selector: 'mc-your-feed',
+  templateUrl: './yourFeed.component.html',
   standalone: true,
   imports: [
     FeedComponent,
@@ -16,6 +15,6 @@ import {FeedTogglerComponent} from '../../../shared/components/feedToggler/feedT
     FeedTogglerComponent,
   ],
 })
-export class GlobalFeedComponent {
-  apiUrl = '/articles'
+export class YourFeedComponent {
+  apiUrl = '/articles/feed'
 }

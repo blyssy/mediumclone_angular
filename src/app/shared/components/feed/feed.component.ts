@@ -1,4 +1,11 @@
-import {Component, Input, OnInit, inject} from '@angular/core'
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  inject,
+} from '@angular/core'
 import {Store} from '@ngrx/store'
 import {feedActions} from './store/actions'
 import {combineLatest} from 'rxjs'
@@ -10,6 +17,7 @@ import {LoadingComponent} from '../loading/loading.component'
 import {environment} from '../../../../environments/environment'
 import {PaginationComponent} from '../pagination/pagination.component'
 import queryString from 'query-string'
+import {TagListComponent} from '../tagList/tagList.component'
 
 @Component({
   selector: 'mc-feed',
@@ -21,9 +29,10 @@ import queryString from 'query-string'
     ErrorMessageComponent,
     LoadingComponent,
     PaginationComponent,
+    TagListComponent,
   ],
 })
-export class FeedComponent implements OnInit {
+export class FeedComponent implements OnInit, OnChanges {
   @Input() apiUrl: string = ''
   store = inject(Store)
   router = inject(Router)
@@ -46,6 +55,16 @@ export class FeedComponent implements OnInit {
       this.currentPage = Number(params['page'] || 1)
       this.fetchFeed()
     })
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    const isApiUrlChanged =
+      !changes['apiUrl'].firstChange &&
+      changes['apiUrl'].currentValue !== changes['apiUrl'].previousValue
+
+    if (isApiUrlChanged) {
+      this.fetchFeed()
+    }
   }
 
   fetchFeed(): void {
