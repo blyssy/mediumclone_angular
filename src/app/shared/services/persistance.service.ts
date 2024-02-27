@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core'
 @Injectable({
   providedIn: 'root',
 })
+// class to get/set token data in localStorage
 export class PersistanceService {
   set(key: string, data: unknown): void {
     try {

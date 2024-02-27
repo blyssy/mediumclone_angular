@@ -6,6 +6,8 @@ import {
 import {PersistanceService} from './persistance.service'
 import {inject} from '@angular/core'
 
+// this interceptor adds the access token to the request
+// going out to the server
 export const authInterceptor: HttpInterceptorFn = (
   request: HttpRequest<unknown>,
   next: HttpHandlerFn
