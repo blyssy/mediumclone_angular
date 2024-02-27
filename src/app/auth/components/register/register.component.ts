@@ -38,7 +38,6 @@ export class RegisterComponent {
   constructor() {}
 
   onSubmit() {
-    console.log('Form submitted', this.form.value)
     const request: RegisterRequestInterface = {
       user: this.form.getRawValue(),
     }

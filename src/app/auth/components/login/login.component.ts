@@ -38,7 +38,6 @@ export class LoginComponent {
   constructor() {}
 
   onSubmit() {
-    console.log('Form submitted', this.form.value)
     const request: LoginRequestInterface = {
       user: this.form.getRawValue(),
     }
