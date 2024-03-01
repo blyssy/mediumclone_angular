@@ -8,7 +8,7 @@ import {ArticleResponseInterface} from '../types/articleResponse.interface'
 @Injectable({
   providedIn: 'root',
 })
-export class ArticledService {
+export class ArticleService {
   http: HttpClient = inject(HttpClient)
   constructor() {}
 

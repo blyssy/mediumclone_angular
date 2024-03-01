@@ -1,4 +1,4 @@
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
 import {Injectable, inject} from '@angular/core'
 import {RegisterRequestInterface} from '../types/registerRequest.interface'
 import {Observable, map} from 'rxjs'
@@ -6,6 +6,20 @@ import {CurrentUserInterface} from '../../shared/types/currentUser.interface'
 import {AuthResponseInterface} from '../types/authResponse.interface'
 import {environment} from '../../../environments/environment'
 import {LoginRequestInterface} from '../types/loginRequest.interface'
+
+//this was suggested by a google search to disable cors.
+//not sure if this really does it since at the time
+//it was the server that was not allowing the request
+//becuase it was offline
+// const httpOptions: any = {
+//   headers: new HttpHeaders({
+//     'Content-Type': 'application/json',
+//     'Access-Control-Allow-Headers': 'Content-Type',
+//     'Access-Control-Allow-Methods': 'GET',
+//     //disable cors
+//     'Access-Control-Allow-Origin': 'http://localhost:4200',
+//   }),
+// }
 
 @Injectable({
   providedIn: 'root',

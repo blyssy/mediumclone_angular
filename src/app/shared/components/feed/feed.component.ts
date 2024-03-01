@@ -14,10 +14,10 @@ import {CommonModule} from '@angular/common'
 import {ActivatedRoute, Router, RouterLink} from '@angular/router'
 import {ErrorMessageComponent} from '../errorMessage/errorMessage.component'
 import {LoadingComponent} from '../loading/loading.component'
-import {environment} from '../../../../environments/environment'
-import {PaginationComponent} from '../pagination/pagination.component'
+import {environment} from '@environments/environment'
+import {PaginationComponent} from '@shared/components/pagination/pagination.component'
 import queryString from 'query-string'
-import {TagListComponent} from '../tagList/tagList.component'
+import {TagListComponent} from '@shared/components/tagList/tagList.component'
 
 @Component({
   selector: 'mc-feed',
