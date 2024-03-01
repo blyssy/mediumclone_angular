@@ -8,15 +8,16 @@ import {map} from 'rxjs'
 @Injectable({
   providedIn: 'root',
 })
-export class CreateArticleService {
+export class EditArticleService {
   http: HttpClient = inject(HttpClient)
 
   constructor() {}
 
-  createArticle(articleRequest: ArticleRequestInterface) {
-    const fullUrl = environment.apiUrl + '/articles'
+  updateArticle(slug: string, articleRequest: ArticleRequestInterface) {
+    const fullUrl = `${environment.apiUrl}/articles/${slug}`
+
     return this.http
-      .post<ArticleResponseInterface>(fullUrl, articleRequest)
+      .put<ArticleResponseInterface>(fullUrl, articleRequest)
       .pipe(map((response: ArticleResponseInterface) => response.article))
   }
 }
