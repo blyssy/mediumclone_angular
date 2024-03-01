@@ -38,7 +38,7 @@ export const redirectAfterCreateEffect = createEffect(
     return actions$.pipe(
       ofType(createArticleActions.createArticleSuccess),
       tap(({article}) => {
-        router.navigate(['/article/' + article.slug])
+        router.navigate(['/articles/' + article.slug])
       })
     )
   },
