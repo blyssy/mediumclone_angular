@@ -37,6 +37,11 @@ export const appRoutes: Route[] = [
       import('./editArticle/editArticle.routes').then((m) => m.routes),
   },
   {
+    path: 'settings',
+    loadChildren: () =>
+      import('./settings/settings.routes').then((m) => m.routes),
+  },
+  {
     path: '',
     loadChildren: () =>
       import('./globalFeed/globalFeed.routes').then((m) => m.routes),
